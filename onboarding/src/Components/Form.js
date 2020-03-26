@@ -63,7 +63,7 @@ const formSchema = yup.object().shape({
       axios
         .post("https://reqres.in/api/users", formState)
         .then(res => {
-          setUsers(res.data);
+          setUsers([...users, res.data.name]);
           console.log("success", users);
   
           setFormState({
